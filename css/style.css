@@ -54,7 +54,7 @@ body {
     font-family: 'Playfair Display SC', georgia;
     font-size: 6rem;
     line-height: 1;
-    font-weight: normal;
+    font-weight: 400;
     margin-bottom: 1rem;
     grid-column: 1 / 4;
 }
@@ -80,9 +80,12 @@ body {
     margin-bottom: 1rem;
 }
 .animais-lista {
-    height: 360px;
+    height: 370px;
     overflow-y: scroll;
     grid-column: 2;
+}
+.animais-lista li {
+    cursor: pointer;
 }
 .animais-lista::-webkit-scrollbar {
     width: 18px;
@@ -177,5 +180,23 @@ body {
     }
     .copy {
         margin-bottom: 0px;
+    }
+}
+.js-tabcontent section {
+    display: none;
+}
+.js-tabcontent section.ativo {
+    display: block !important;
+    animation: show .5s forwards;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        transform: translated3d(-30x, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translated3d(0, 0, 0);
     }
 }
