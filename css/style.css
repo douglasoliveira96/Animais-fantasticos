@@ -60,7 +60,7 @@ body {
 }
 .animais h2 {
     font-family: monospace;
-    font-size: 1rem;
+    font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: .1em;
     margin-bottom: 1rem;
@@ -113,6 +113,10 @@ body {
     margin-top: 2rem;
     margin-bottom: .5rem;
     color: #e54;
+}
+.faq-lista dt {
+    cursor: pointer;
+    font-size: 20px;
 }
 .faq-lista dt::before {
     content: '';
@@ -198,5 +202,29 @@ body {
     to {
         opacity: 1;
         transform: translated3d(0, 0, 0);
+    }
+}
+.js .js-accordion dd {
+    display: none;
+}
+.js-accordion dt::after {
+    content: '👇🏽';
+    margin-left: 10px;
+}
+.js-accordion dt.ativo::after {
+    content: '👆🏽';
+}
+.js-accordion dd.ativo {
+    display: block;
+    animation: slideDown .5s forwards;
+}
+@keyframes slideDown {
+    from {
+      opacity: 0;  
+      max-height: 0;
+    }
+    to {
+        max-height: 200px;
+        opacity: 1;
     }
 }
