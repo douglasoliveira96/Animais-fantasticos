@@ -125,26 +125,24 @@ a:active {
 .animais-descricao {
     grid-column: 3;
 }
-.animais-descricao {
+.animais-descricao section {
     margin-bottom: 3rem;
 }
 .faq-lista {
     grid-column: 2 / 4;
 }
 .faq-lista dt {
-    font-family: monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-weight: bold;
     margin-top: 2rem;
     margin-bottom: .5rem;
     color: #6C733D;
+    cursor: pointer;
 }
 .faq-lista dt:hover {
     color: #565a38;
 }
-.faq-lista dt {
-    cursor: pointer;
-    font-size: 20px;
-}
+
 .faq-lista dt::before {
     content: '';
     display: inline-block;
@@ -213,15 +211,23 @@ a:active {
         margin-bottom: 0px;
     }
 }
-.js-tabcontent section {
+.js [data-tab="content"] section {
     display: none;
-}
-.js-tabcontent section.ativo {
+  }
+  
+  [data-tab="content"] section.ativo {
     display: block !important;
-    animation: show .5s forwards;
-}
+  }
+  
+  [data-tab="content"] section.ativo.show-right {
+    animation: show-right .5s forwards;
+  }
+  
+  [data-tab="content"] section.ativo.show-down {
+    animation: show-down .5s forwards;
+  }
 
-@keyframes show {
+@keyframes show-right {
     from {
         opacity: 0;
         transform: translated3d(-30x, 0, 0);
@@ -231,20 +237,35 @@ a:active {
         transform: translated3d(0, 0, 0);
     }
 }
-.js .js-accordion dd {
+
+@keyframes show-down {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -30px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+.js [data-anime="accordion"] dd {
     display: none;
-}
-.js-accordion dt::after {
+  }
+  
+  [data-anime="accordion"] dt::after {
     content: '👇🏽';
     margin-left: 10px;
-}
-.js-accordion dt.ativo::after {
+  }
+  
+  [data-anime="accordion"] dt.ativo::after {
     content: '👆🏽';
-}
-.js-accordion dd.ativo {
+  }
+  
+  [data-anime="accordion"] dd.ativo {
     display: block;
     animation: slideDown .5s forwards;
-}
+  }
+
 @keyframes slideDown {
     from {
       opacity: 0;  
@@ -255,12 +276,35 @@ a:active {
         opacity: 1;
     }
 }
-.js .js-scroll {
+.js [data-anime="scroll"] {
     opacity: 0;
     transform: translate3d(-30px, 0, 0);
     transition: .3s;
-}
-.js .js-scroll.ativo {
+  }
+  
+  .js [data-anime="scroll"].ativo {
     opacity: 1;
     transform: translate3d(0, 0, 0);
-}
+  }
+
+  [data-semana]::after {
+    display: inline-block;
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #E54;
+    border-radius: 50%;
+    margin-left: 4px;
+    border: 2px solid #000;
+  }
+  
+  [data-semana].aberto::after {
+    background: #3F4;
+  }
+  
+  .btc-preco {
+    background: #3F4;
+    padding: .2rem .5rem;
+    font-weight: bold;
+    border-radius: 2px;  
+  }
