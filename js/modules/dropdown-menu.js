@@ -13,16 +13,29 @@ dropdownMenus.forEach(menu => {
 function handleClick(event) {
     event.preventDefault();
     this.classList.add('active');
-    outsideClick(() => {
+    outsideClick(this, ['touchstart', 'click'], () => {
         this.classList.remove('active');
     });
 }
 
-function outsideClick(element, callback) {
+function outsideClick(element, events, callback) {
     const html = document.documentElement;
-    html.addEventListener('click', handleOutsideClick);
+    const outside = 'data-outside';
+    
+    if(!element.hasAttribute(outside)) {
+        events.forEach(userEvent => {
+            html.addEventListener(userEvent, handeOutsideClick);
+        })
+        element.setAttribute('data-outside')
+    }
+
     function handleOutsideClick(event) {
-        console.log(element.contains(event.target));
+        if(element.contains(event.target)); {
+            element.removeAttribute(outside);
+            events.forEach(userEvents => {
+                html.removeEventListener(userEvent, handeOutsideClick);
+            })
         callback();
+        }
     }
 }
