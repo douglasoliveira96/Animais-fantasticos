@@ -48,11 +48,7 @@ Acesse o projeto abrindo o arquivo **index.html** no seu navegador.
 
 ## License
 
-![Animais-fantasticos](https://user-images.githubusercontent.com/79033956/142867677-bccea102-1341-4188-9fd0-c36c6765416f.jpg)
+https://user-images.githubusercontent.com/79033956/142868720-5a6234c2-8760-41a3-b918-665dc4ab2c42.mp4
 
-https://user-images.githubusercontent.com/79033956/142867180-e203e670-c146-4f44-9e7d-10e928342ab6.mp4
 
 Copyright © 2021 Douglas de Oliveira / Origamid
-
-
-
