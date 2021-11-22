@@ -3,7 +3,7 @@
 Animais Fantásticos é um site desenvolvido no curso de JavaScript ES6+ completo pela Origamid.
 
 <h4 align="center"> 
-	🚧  Animais Fantásticos 🚀 Em construção...  🚧
+	🚧  Animais Fantásticos 🚀
 </h4>
 
 ****
